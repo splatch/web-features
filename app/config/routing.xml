@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations 
+ xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0" 
+ xmlns="http://agavi.org/agavi/config/parts/routing/1.0">
+  <ae:configuration>
+    <routes>
+      <!-- default action for site root "/" -->
+      <route name="index" pattern="^/$" module="Default" action="Index" />
+      
+      <!-- action for static pages "/content/$page" -->
+      <route name="content" pattern="^/content/(page:[\w-]+)$" module="Default" action="StaticContent" />
+      
+      <route name="parse" pattern="^/parse$" module="Default" action="Parse" />
+    </routes>
+  </ae:configuration>
+</ae:configurations>

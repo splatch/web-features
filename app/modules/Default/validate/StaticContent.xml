@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations
+  xmlns="http://agavi.org/agavi/config/parts/validators/1.0"
+  xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0"
+  parent="%core.module_dir%/Default/config/validators.xml"
+>
+  <ae:configuration>
+    
+    <validators method="read">
+      <validator class="regex">
+        <arguments>
+          <argument>page</argument>
+        </arguments>
+        <ae:parameters>
+          <ae:parameter name="pattern">#^[\w-]+$#</ae:parameter>
+          <ae:parameter name="match">true</ae:parameter>
+        </ae:parameters>
+      </validator>
+    </validators>
+        
+  </ae:configuration>
+</ae:configurations>

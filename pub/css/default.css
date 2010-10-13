@@ -1,23 +1,31 @@
 body { 
   margin: 0; 
   padding: 0; 
-  font-family: 'Verdana' sans-serif;
+  font-family: Verdana, sans-serif;
+  font-size: 11px;
+  width: 900px;
+  margin: 0px auto;
+}
+
+fieldset {
+	border: none;
 }
 
 #header {
   height: 80px;
-  background: #4062A8;
+  background: #CDEB8B;
+  -moz-border-radius-bottomright: 10px;
 }
 
 #logo {
   float: left;
-  padding-left: 50px;
-  padding-top: 5px;
+  width: 204px;
+  height: 80px;
+  background: transparent url(/images/code-house-software.png) no-repeat scroll left top;
 }
 
 #menu {
   float: right;
-  background: #4062A8;
   margin-right: 20px;
 }
 
@@ -26,30 +34,79 @@ body {
 }
 
 #menu li {
-  margin-top: 35px;
+  margin-top: 25px;
   float: left;  
-  padding-right: 25px;
-  padding-left: 25px;
+  padding-right: 5px;
+  padding-left: 5px;
+  font-size: 10pt;
 }
 
 #menu a, #footer a {
-  color: white;
+  color: #36393D;
   font-weight: bold;
+  text-decoration: none;
+}
+
+#menu a {
+	display: inline-block;
+	padding: 5px 15px;
+}
+
+#menu a:hover {
+	background: #fff;
+	-moz-border-radius: 5px;
 }
 
 #body {
-  padding-top: 20px;
-  padding-left: 50px;
-  min-height: 375px;
+
 }
 
 #footer {
-  font-size: x-small;
-  color: white;
+  font-size: 10pt;
+  color: #36393D;
   float: right;
   text-align: right;
-  background: #4062A8;
-  width: 400px;
+  background: #CDEB8B;
   clear: both;
-  margin-top: 20px;
+  margin-top: 50px;
+  padding: 0 10px;
+  -moz-border-radius: 10px;
+}
+
+table {
+	width: 100%;
+	font-size: 11px;
+}
+
+table th {
+	background: #36393D;
+	color: #fff;
+	padding: 5px;
+	-moz-border-radius: 5px;
+}
+
+table td {
+	padding: 5px 15px;
+	border-bottom: solid 1px #eee;
+	-moz-border-radius: 5px;
+}
+
+table td.lp {
+	width: 40px;
+	text-align: center;
+}
+
+table tr:hover td {
+	background: #f2f2f2;
+}
+
+table td.operations {
+	width: 100px;
+	text-align: center;
+}
+
+h2 {
+	border-bottom: 3px solid #CDEB8B;
+	font-size: 16px;
+	padding: 5px;
 }

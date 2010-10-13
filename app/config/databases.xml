@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ae:configurations xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0" xmlns="http://agavi.org/agavi/config/parts/databases/1.0">
-  <ae:configuration>
-    <databases default="doctrine">
-      <database name="doctrine" class="AgaviDoctrineDatabase">
-        <ae:parameter name="dsn">%doctrine.dsn%</ae:parameter>
-        <ae:parameter name="charset">utf8</ae:parameter>
-        <ae:parameter name="options">
-          <ae:parameter name="username">%doctrine.username%</ae:parameter>
-          <ae:parameter name="password">%doctrine.password%</ae:parameter> 
-        </ae:parameter>
-        <ae:parameter name="load_models">%doctrine.models_path%</ae:parameter>
-      </database>
-    </databases>
-  </ae:configuration>
-</ae:configurations>
+  <ae:configurations xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0" xmlns="http://agavi.org/agavi/config/parts/databases/1.0">
+    <ae:configuration environment="development">
+      <databases default="pdo_mysql_main">
+        <database name="pdo_mysql_main" class="AgaviPdoDatabase">
+          <ae:parameter name="dsn">pgsql:host=localhost;dbname=webfeatures</ae:parameter>
+          <ae:parameter name="username">root</ae:parameter>
+          <ae:parameter name="password">root</ae:parameter>
+        </database>
+      </databases>
+    </ae:configuration>
+  </ae:configurations>

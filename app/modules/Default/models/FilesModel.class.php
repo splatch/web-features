@@ -2,41 +2,39 @@
 
 class Default_FilesModel extends WebfeaturesDefaultBaseModel
 {
-	private $id;
-	private $filename;
 	
-	public function __construct(array $data = null){
-	  	if(!empty($data)){
-	  		$this->fromArray($data);
-		}
-	}
-	
-	public function getId(){
-		return $this->id;
-	}
-	
-	public function setId($id){
-		$this->id = $id;
-	}
-	
-	public function getFilename(){
-		return $this->filename;
-	}
-	
-	public function setFilename($filename){
-		$this->filename = $filename;
-	}
-	
-	public function fromArray(array $data){
-		$this->setId($data['id']);
-		$this->setFilename($data['filename']);
-	}
-	
-	public function toArray(){
-		$data = array();
-		$data['id'] = $this->getId();
-		$data['filename'] = $this->getFilename();
-	}
+  	public function retrieveById($id){
+		$sql = 'SELECT * FROM files WHERE id = ?';
+  
+    	$stmt = $this->getContext()->getDatabaseManager()->getDatabase()->getConnection()->prepare($sql);
+    	$stmt->bindValue(1, $id, PDO::PARAM_INT);
+    	$stmt->execute();
+  
+	    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+	    
+	    if (false != $result)
+	    {
+	      return $this->getContext()->getModel('File', 'Files', array($result));
+	    }
+	    
+	    return null;
+  	}
+
+  	public function getList(){
+  		$sql = 'SELECT * FROM files ORDER BY id DESC';
+  		
+  		$stmt = $this->getContext()->getDatabaseManager()->getDatabase()->getConnection()->prepare($sql);
+  		$stmt->execute();
+  		
+  		$result = $stmt->fetch(PDO::FETCH_ASSOC);
+  		
+  		if (false != $result)
+  		{
+  			return $this->getContext()->getModel('File', 'Files', array($result));
+  		}
+  		
+  		return null;
+  	}
 }
 
 ?>

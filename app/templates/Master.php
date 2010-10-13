@@ -11,13 +11,12 @@
   <body>
     <!-- begin header -->
     <div id="header">
-      <div id="logo">
-        <h1>CODE-HOUSE WEB FEATURES</h1>
-      </div>
+      <div id="logo"></div>
       <div id="menu">
         <ul>
           <li><a href="<?php echo $ro->gen('index'); ?>">
            Strona główna</a></li>
+          <li><a href="<?php echo $ro->gen('files'); ?>">Lista plików</a></li>
           <li><a href="<?php echo $ro->gen('parse'); ?>">Parsowanie</a>
           </li>
         </ul>

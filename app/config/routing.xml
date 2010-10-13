@@ -11,6 +11,12 @@
       <route name="content" pattern="^/content/(page:[\w-]+)$" module="Default" action="StaticContent" />
       
       <route name="parse" pattern="^/parse$" module="Default" action="Parse" />
+      
+      <route name="Files" pattern="^/files$" module="Files" action="Index" />
+      <route name="FilesAdd" pattern="^/files/add$" module="Files" action="Add" />
+      <route name="FilesDelete" pattern="^/files/delete$" module="Files" action="Delete" />
+      <route name="FilesShow" pattern="^/files/show/(id:\d+)$" module="Files" action="Show" />
+      <route name="FilesAdd" pattern="^/files/add$" module="Files" action="Add" />
     </routes>
   </ae:configuration>
 </ae:configurations>

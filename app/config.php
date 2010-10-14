@@ -53,6 +53,7 @@ AgaviConfig::set('core.app_dir', dirname(__FILE__));
 // |  - core.template_dir (defaults to "<core.app_dir>/templates")             |
 // +---------------------------------------------------------------------------+
 
+/*
 ini_set('include_path', dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'libs' . PATH_SEPARATOR . ini_get('include_path'));
 
 
@@ -68,6 +69,6 @@ AgaviConfig::set('doctrine.password', 'root');
 AgaviConfig::set('doctrine.hostspec', 'localhost');
 AgaviConfig::set('doctrine.database', 'webfeatures');
 AgaviConfig::set('doctrine.dsn', AgaviConfig::get('doctrine.phptype') . '://' . AgaviConfig::get('doctrine.username') . ':' . AgaviConfig::get('doctrine.password') . '@' . AgaviConfig::get('doctrine.hostspec') . '/' . AgaviConfig::get('doctrine.database'));
-
+*/
 
 ?>

@@ -1,7 +1,7 @@
 <?php
 // Doctrine configuration file - only for command line usage.
 
-$classLoader = new \Doctrine\Common\ClassLoader('WebFeatures', 'app');
+$classLoader = new \Doctrine\Common\ClassLoader('WebFeatures', 'app\models');
 $classLoader->register();
 
 $config = new Doctrine\ORM\Configuration(); // (2)

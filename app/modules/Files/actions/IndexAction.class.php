@@ -21,8 +21,8 @@ class Files_IndexAction extends WebfeaturesFilesBaseAction
 	
   	public function executeRead(AgaviRequestDataHolder $rd)
   	{
-  		$manager = $this->getContext()->getModel('FilesManager', 'Files');
-  		$this->setAttribute('files', $manager->getList());
+  		$manager = $this->getModel('\WebFeatures\DAO\FileDAO');
+  		$this->setAttribute('files', $manager->findAll());
   		return 'Success';
   	}
 }

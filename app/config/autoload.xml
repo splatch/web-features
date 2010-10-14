@@ -10,5 +10,7 @@
 
 		<!-- Model classes -->
 		<autoload name="WebFeatures\Model\File">%core.model_dir%/WebFeatures/Model/File.php</autoload>
+
+		<autoload name="WebFeatures\DAO\FileDAOModel">%core.model_dir%/WebFeatures/DAO/FileDAO.class.php</autoload>
 	</ae:configuration>
 </ae:configurations>

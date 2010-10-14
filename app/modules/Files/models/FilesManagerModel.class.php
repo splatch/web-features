@@ -1,28 +1,24 @@
 <?php
 
+use Doctrine\ORM\Internal\Hydration\HydrationException;
 class Files_FilesManagerModel extends WebfeaturesFilesBaseModel
 {
+	/**
+	 * @var Doctrine\ORM\EntityManager Entity manager.
+	 */
+	private $em;
+	
+	public function initialize(AgaviContext $context, array $parameters = array()) {
+		parent::initialize($context, $parameters);
+
+		$this->em = $context->getDatabaseManager()->getDatabase()->getEntityManager();
+	}
+
   	public function getList()
   	{
-  		$sql = 'SELECT * FROM files ORDER BY id DESC';
-  		
-  		$stmt = $this->getContext()->getDatabaseManager()->getDatabase()->getConnection()->prepare($sql);
-  		$stmt->execute();
-  		
-  		$result = $stmt->fetchAll();
+  		$query = $this->em->createQuery('SELECT f FROM WebFeatures\Model\File f');
 
-  		if (false != $result)
-  		{
-  			$files = array();
-			foreach ($result as $row)
-			{
-				$files[] = $this->getContext()->getModel('Files', 'Files', array($row));
-			}
-  			
-			return $files;
-  		}
-  		
-  		return null;
+  		return $query->getResult();
   	}
   	
   	public function retrieveById($id)

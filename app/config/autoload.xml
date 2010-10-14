@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ae:configurations xmlns="http://agavi.org/agavi/config/parts/autoload/1.0" xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0" parent="%core.system_config_dir%/autoload.xml">
 	<ae:configuration>
-		
 		<autoload name="WebfeaturesBaseAction">%core.lib_dir%/action/WebfeaturesBaseAction.class.php</autoload>
 		<autoload name="WebfeaturesBaseModel">%core.lib_dir%/model/WebfeaturesBaseModel.class.php</autoload>
 		<autoload name="WebfeaturesBaseView">%core.lib_dir%/view/WebfeaturesBaseView.class.php</autoload>
-		
+
+		<!-- Custom database -->
+		<autoload name="AgaviDoctrine2Database">%core.lib_dir%/AgaviDoctrine2Database.class.php</autoload>
+
+		<!-- Model classes -->
+		<autoload name="WebFeatures\Model\File">%core.model_dir%/WebFeatures/Model/File.php</autoload>
 	</ae:configuration>
 </ae:configurations>

@@ -7,6 +7,21 @@
 	<ae:configuration>
 		
 		<validators>
+		
+	      <validator class="string">
+	        <arguments>
+	          <argument>file_url</argument>
+	        </arguments>
+	        <errors>
+	          <error>Adres pliku jest wymaganym polem</error>
+	          <error for="required">Adres pliku jest wymaganym polem.</error>
+	          <error for="max_error">Maksymalna długość adresu to 1024 znaków.</error>
+	        </errors>
+	        <ae:parameters>
+	          <ae:parameter name="max">1024</ae:parameter>
+	        </ae:parameters>
+	      </validator>
+		
 		</validators>
 		
 	</ae:configuration>

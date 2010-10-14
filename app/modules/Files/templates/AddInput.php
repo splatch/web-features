@@ -1,5 +1,5 @@
 <h2>Dodaj nowy plik</h2>
-<form action="<?php echo $t['target_url']; ?>" method="post">
+<form action="/files/add" method="post">
   <fieldset>
     <div class="form_row">
       <label for="file_url">Adres pliku:</label>

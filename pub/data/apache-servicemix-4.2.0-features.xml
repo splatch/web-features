@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<features>
+    <repository>mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/1.2.0/xml/features</repository>
+    <repository>mvn:org.apache.camel.karaf/apache-camel/2.2.0/xml/features</repository>
+    <repository>mvn:org.apache.felix.karaf/apache-felix-karaf/1.4.0/xml/features</repository>
+    <feature name="connector" version="4.2.0">
+        <feature version="1.2.0">transaction</feature>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-j2ee-connector_1.5_spec/2.0.0</bundle>
+        <bundle>mvn:org.apache.geronimo.components/geronimo-connector/2.1.3</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/1.1.1</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/1.1.2</bundle> 
+        <bundle>mvn:org.springframework/spring-tx/2.5.6.SEC01</bundle>                                 
+        <bundle>mvn:org.springframework/spring-beans/2.5.6.SEC01</bundle>
+        <bundle>mvn:org.springframework/spring-context/2.5.6.SEC01</bundle>
+        <bundle>mvn:org.springframework/spring-aop/2.5.6.SEC01</bundle>
+        <bundle>mvn:org.jencks/jencks/2.2</bundle>
+    </feature>
+    <feature name="web-core" version="4.2.0">
+        <feature version="1.4.0">http</feature>
+        <bundle>mvn:org.ops4j.pax.web/pax-web-jsp/0.7.2</bundle>
+    </feature>
+    <feature name="web" version="4.2.0">
+        <feature version="4.2.0">web-core</feature>
+        <bundle>mvn:org.ops4j.pax.web/pax-web-extender-war/0.7.2</bundle>
+        <bundle>mvn:org.ops4j.pax.web/pax-web-extender-whiteboard/0.7.2</bundle>
+        <bundle>mvn:org.ops4j.pax.url/pax-url-war/1.1.2</bundle>
+        <bundle>mvn:org.apache.servicemix.war/org.apache.servicemix.war.deployer/4.2.0</bundle>
+    </feature>
+    <feature name="activemq" version="5.3.0">
+        <feature version="4.2.0">connector</feature>
+        <feature version="2.5.6.SEC01">spring</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.oro/2.0.8_3</bundle>
+        <bundle>mvn:commons-collections/commons-collections/3.2.1</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-j2ee-management_1.1_spec/1.0.1</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-pool/1.4_1</bundle>
+        <bundle>mvn:org.apache.xbean/xbean-spring/3.5</bundle>
+        <bundle>mvn:org.apache.activemq/kahadb/5.3.0</bundle>
+        <bundle>mvn:org.apache.activemq/activemq-core/5.3.0</bundle>
+        <bundle>mvn:org.apache.activemq/activemq-ra/5.3.0</bundle>
+        <bundle>mvn:org.apache.activemq/activemq-console/5.3.0</bundle>
+        <bundle>mvn:org.apache.activemq/activemq-pool/5.3.0</bundle>
+        <bundle>mvn:org.apache.servicemix.activemq/org.apache.servicemix.activemq.commands/4.2.0</bundle>
+    </feature>
+    <feature name="cxf" version="2.2.6">
+        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.activation-api-1.1/1.4.0</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.0_spec/1.1.1</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-ws-metadata_2.0_spec/1.1.2</bundle>
+        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.saaj-api-1.3/1.4.0</bundle>
+        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxb-api-2.1/1.4.0</bundle>
+        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxws-api-2.1/1.4.0</bundle>
+        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.stax-api-1.0/1.4.0</bundle>
+        <bundle>mvn:javax.mail/mail/1.4.3</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.asm/2.2.3_3</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.fastinfoset/1.2.7_2</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jaxb-impl/2.1.12_1</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.neethi/2.0.4_2</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.saaj-impl/1.3.2_1</bundle>
+        <bundle>mvn:org.codehaus.woodstox/stax2-api/3.0.1</bundle>
+        <bundle>mvn:org.codehaus.woodstox/woodstox-core-asl/4.0.7</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.wsdl4j/1.6.2_2</bundle>
+        <bundle>mvn:org.apache.ws.commons.schema/XmlSchema/1.4.5</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlresolver/1.2_2</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xerces/2.9.1_3</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.bcel/5.2_2</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xalan/2.7.1_2</bundle>
+        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jsr311-api-1.0/1.4.0</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlsec/1.4.3_2</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.opensaml/1.1_4</bundle>
+        <bundle>mvn:org.apache.ws.security/wss4j/1.5.8</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlbeans/2.4.0_3</bundle>
+        <bundle>mvn:commons-lang/commons-lang/2.4</bundle>
+        <bundle>mvn:commons-collections/commons-collections/3.2.1</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.oro/2.0.8_3</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.velocity/1.6.2_3</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.abdera/0.4.0-incubating_3</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-codec/1.3_2</bundle>
+        <bundle>mvn:org.codehaus.jettison/jettison/1.2</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jdom/1.1_2</bundle>
+        <bundle>mvn:org.apache.ws.commons.axiom/axiom-impl/1.2.8</bundle>
+        <bundle>mvn:org.apache.ws.commons.axiom/axiom-api/1.2.8</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/1.1.2</bundle>
+        <bundle>mvn:org.apache.servicemix.transaction/org.apache.servicemix.transaction/1.2.0</bundle>
+        <bundle>mvn:org.apache.cxf/cxf-bundle/2.2.6</bundle>
+    </feature>
+    <feature name="cxf-osgi" version="4.2.0">
+        <feature version="2.2.6">cxf</feature>
+        <feature version="4.2.0">web-core</feature>
+        <bundle>mvn:org.ops4j.pax.web/pax-web-extender-whiteboard/0.7.2</bundle>
+    </feature>
+    <feature name="cxf-jaxrs" version="4.2.0">
+        <feature version="4.2.0">cxf-osgi</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.abdera/0.4.0-incubating_3</bundle>
+        <bundle>mvn:org.codehaus.jettison/jettison/1.2</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlbeans/2.4.0_3</bundle>
+    </feature>
+    <feature name="cxf-nmr" version="4.2.0">
+        <feature version="2.2.6">cxf</feature>
+        <feature version="1.2.0">nmr</feature>
+        <bundle>mvn:org.apache.servicemix.cxf/org.apache.servicemix.cxf.transport.nmr/4.2.0</bundle>
+        <bundle>mvn:org.apache.servicemix.cxf/org.apache.servicemix.cxf.binding.nmr/4.2.0</bundle>
+    </feature>
+    
+
+    <feature name="camel-nmr" version="4.2.0">
+        <feature version="2.2.0">camel</feature>
+        <feature version="1.2.0">nmr</feature>
+        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxws-api-2.1/1.4.0</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-ws-metadata_2.0_spec/1.1.2</bundle>
+        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.saaj-api-1.3/1.4.0</bundle>
+        <bundle>mvn:org.apache.servicemix.camel/org.apache.servicemix.camel.component/4.2.0</bundle>
+    </feature>
+    
+    <feature name="camel-activemq" version="4.2.0">
+        <feature version="5.3.0">activemq</feature>
+        <feature version="2.2.0">camel-jms</feature>
+        <bundle>mvn:org.apache.activemq/activemq-camel/5.3.0</bundle>
+    </feature>
+
+    <!--
+	  -
+	  -  Examples
+	  -
+    -->
+
+    <feature name="examples-cxf-osgi" version="4.2.0">
+        <feature version="4.2.0">cxf-osgi</feature>
+        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jbi-api-1.0/1.4.0</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-utils/1.2.1</bundle>
+        <bundle>mvn:org.springframework/spring-beans/2.5.6.SEC01</bundle>
+        <bundle>mvn:org.apache.servicemix.examples/cxf-osgi/4.2.0</bundle>
+    </feature>
+    <feature name="examples-cxf-jaxrs" version="4.2.0">
+        <feature version="4.2.0">cxf-jaxrs</feature>
+        <bundle>mvn:org.springframework/spring-beans/2.5.6.SEC01</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-httpclient/3.1_4</bundle>
+        <bundle>mvn:org.apache.servicemix.examples/cxf-jaxrs/4.2.0</bundle>
+    </feature>
+    <feature name="examples-cxf-nmr" version="4.2.0">
+        <feature version="4.2.0">cxf-nmr</feature>
+        <bundle>mvn:org.springframework/spring-beans/2.5.6.SEC01</bundle>
+        <bundle>mvn:org.apache.servicemix.examples/cxf-nmr/4.2.0</bundle>
+    </feature>
+    <feature name="examples-camel-osgi" version="4.2.0">
+        <feature version="2.2.0">camel</feature>
+        <bundle>mvn:org.apache.servicemix.examples/camel-osgi/4.2.0</bundle>
+    </feature>
+    <feature name="examples-camel-nmr" version="4.2.0">
+        <feature version="4.2.0">camel-nmr</feature>
+        <bundle>mvn:org.apache.servicemix.examples/camel-nmr/4.2.0</bundle>
+    </feature>
+    <feature name="examples-cxf-camel-nmr" version="4.2.0">
+        <feature version="4.2.0">camel-nmr</feature>
+        <feature version="4.2.0">cxf-nmr</feature>
+        <bundle>mvn:org.springframework/spring-beans/2.5.6.SEC01</bundle>
+        <bundle>mvn:org.apache.servicemix.examples/cxf-camel-nmr/4.2.0</bundle>
+    </feature>
+    <feature name="examples-cxf-ws-addressing" version="4.2.0">
+        <feature>cxf-osgi</feature>
+        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jbi-api-1.0/1.4.0</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-utils/1.2.1</bundle>
+        <bundle>mvn:org.apache.servicemix.examples/cxf-ws-addressing/4.2.0</bundle>
+        <bundle>mvn:org.springframework/spring-beans/2.5.6.SEC01</bundle>
+    </feature>
+    <feature name="examples-cxf-wsdl-first-osgi-package" version="4.2.0">
+        <feature version="2010.01">servicemix-cxf-bc</feature>
+        <feature version="2010.01">servicemix-cxf-se</feature>
+        <bundle>mvn:org.springframework/spring-beans/2.5.6.SEC01</bundle>
+        <bundle>mvn:org.apache.servicemix.examples.cxf-wsdl-first-osgi-package/wsdl-first-cxfbc-bundle/4.2.0</bundle>
+        <bundle>mvn:org.apache.servicemix.examples.cxf-wsdl-first-osgi-package/wsdl-first-cxfse-bundle/4.2.0</bundle>
+    </feature>
+    <feature name="examples-cxf-ws-security-osgi" version="4.2.0">
+        <feature>cxf-osgi</feature>
+        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jbi-api-1.0/1.4.0</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-utils/1.2.1</bundle>
+        <bundle>mvn:org.springframework/spring-beans/2.5.6.SEC01</bundle>
+        <bundle>mvn:org.apache.servicemix.examples/cxf-ws-security-osgi/4.2.0</bundle>
+    </feature>
+    <feature name="examples-cxf-ws-rm" version="4.2.0">
+        <bundle>mvn:org.apache.servicemix.examples/cxf-ws-rm/4.2.0</bundle>
+    </feature>
+    <!--
+      -
+      -  JBI Components
+      -
+      -->
+    <feature name="servicemix-shared" version="2010.01">
+        <feature version="1.2.0">jbi</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.wsdl4j/1.6.2_2</bundle>
+        <bundle>mvn:org.apache.xbean/xbean-spring/3.5</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-utils/1.2.1</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-common/2010.01</bundle>
+    </feature>
+    <feature name="servicemix-cxf-bc" version="2010.01">
+        <feature version="2010.01">servicemix-shared</feature>
+        <feature version="2.2.6">cxf</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jetty-bundle/6.1.22_1</bundle>
+        <bundle>mvn:org.springframework/spring-tx/2.5.6.SEC01</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/1.1.1</bundle>        
+        <bundle>mvn:org.apache.servicemix/servicemix-soap2/2010.01</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-cxf-bc/2010.01</bundle>
+    </feature>
+    <feature name="servicemix-file" version="2010.01">
+        <feature version="2010.01">servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix/servicemix-file/2010.01</bundle>
+    </feature>
+    <feature name="servicemix-ftp" version="2010.01">
+        <feature version="2010.01">servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.oro/2.0.8_3</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-net/1.4.1_3</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-pool/1.5.4_1</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-ftp/2010.01</bundle>
+    </feature>
+    <feature name="servicemix-http" version="2010.01">
+        <feature version="2010.01">servicemix-shared</feature>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/1.1.2</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-codec/1.3_2</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-httpclient/3.1_4</bundle>
+        <bundle>mvn:org.apache.ws.commons.schema/XmlSchema/1.4.5</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlsec/1.4.3_2</bundle>
+        <bundle>mvn:org.apache.ws.security/wss4j/1.5.8</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jetty-bundle/6.1.22_1</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-soap/2010.01</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-soap2/2010.01</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-http/2010.01</bundle>
+    </feature>
+    <feature name="servicemix-jms" version="2010.01">
+        <feature version="2010.01">servicemix-shared</feature>
+        <bundle>mvn:org.apache.ws.commons.schema/XmlSchema/1.4.5</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlsec/1.4.3_2</bundle>
+        <bundle>mvn:org.apache.ws.security/wss4j/1.5.8</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-soap/2010.01</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-soap2/2010.01</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-j2ee-connector_1.5_spec/2.0.0</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/1.1.1</bundle>
+        <bundle>mvn:org.springframework/spring-jms/2.5.6.SEC01</bundle>
+        <bundle>mvn:org.springframework/spring-tx/2.5.6.SEC01</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-jms/2010.01</bundle>
+    </feature>
+    <feature name="servicemix-mail" version="2010.01">
+        <feature version="2010.01">servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.activation-api-1.1/1.4.0</bundle>
+        <bundle>mvn:javax.mail/mail/1.4.3</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-mail/2010.01</bundle>
+    </feature>
+    <feature name="servicemix-bean" version="2010.01">
+        <feature version="2010.01">servicemix-shared</feature>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.0_spec/1.1.1</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-bean/2010.01</bundle>
+    </feature>
+    <feature name="servicemix-camel" version="2010.01">
+        <feature version="2010.01">servicemix-shared</feature>
+        <feature version="2.2.0">camel</feature>
+        <bundle>mvn:org.apache.servicemix/servicemix-camel/2010.01</bundle>
+    </feature>
+    <feature name="servicemix-drools" version="2010.01">
+        <feature version="2010.01">servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jdt-core/3.2.3_2</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.antlr-runtime/3.0.1_1</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.drools/4.0.7_4</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.mvel/1.3.12_1</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-drools/2010.01</bundle>
+    </feature>
+    <feature name="servicemix-cxf-se" version="2010.01">
+        <feature version="2010.01">servicemix-shared</feature>
+        <feature version="2.2.6">cxf</feature>
+        <bundle>mvn:org.apache.cxf/cxf-rt-bindings-jbi/2.2.6</bundle>
+        <bundle>mvn:org.apache.cxf/cxf-rt-transports-jbi/2.2.6</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-cxf-se/2010.01</bundle>
+    </feature>
+    <feature name="servicemix-eip" version="2010.01">
+        <feature version="2010.01">servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix/servicemix-eip/2010.01</bundle>
+    </feature>
+    <feature name="servicemix-osworkflow" version="2010.01">
+        <feature version="2010.01">servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.antlr/3.0.1_1</bundle>
+        <bundle>mvn:commons-collections/commons-collections/3.2.1</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.quartz/1.6.1_3</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.oscore/2.2.4_3</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.propertyset/1.3_3</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.osworkflow/2.7.0_3</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-osworkflow/2010.01</bundle>
+    </feature>
+    <feature name="servicemix-quartz" version="2010.01">
+        <feature version="2010.01">servicemix-shared</feature>
+        <bundle>mvn:commons-collections/commons-collections/3.2.1</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.quartz/1.6.1_3</bundle>
+        <bundle>mvn:org.springframework/spring-context-support/2.5.6.SEC01</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-quartz/2010.01</bundle>
+    </feature>
+    <feature name="servicemix-scripting" version="2010.01">
+        <feature version="2010.01">servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.scripting-api-1.0/1.4.0</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.asm/2.2.3_3</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.antlr/2.7.7_2</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.groovy/1.5.6_3</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.rhino/1.7R1_1</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jruby/1.1.2_2</bundle>
+        <bundle>mvn:com.google.code.scriptengines/scriptengines-groovy/1.1</bundle>
+        <bundle>mvn:com.google.code.scriptengines/scriptengines-javascript/1.1</bundle>
+        <bundle>mvn:com.google.code.scriptengines/scriptengines-jruby/1.1</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-scripting/2010.01</bundle>
+    </feature>
+    <feature name="servicemix-validation" version="2010.01">
+        <feature version="2010.01">servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix/servicemix-validation/2010.01</bundle>
+    </feature>
+    <feature name="servicemix-saxon" version="2010.01">
+        <feature version="2010.01">servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.saxon/9.1.0.1_3</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-saxon/2010.01</bundle>
+    </feature>
+    <feature name="servicemix-wsn2005" version="2010.01">
+        <feature version="2010.01">servicemix-shared</feature>
+        <feature version="5.3.0">activemq</feature>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-ws-metadata_2.0_spec/1.1.2</bundle>
+        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.saaj-api-1.3/1.4.0</bundle>
+        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxb-api-2.1/1.4.0</bundle>
+        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxws-api-2.1/1.4.0</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jaxb-impl/2.1.12_1</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-wsn2005/2010.01</bundle>
+    </feature>
+    <feature name="servicemix-snmp" version="2010.01">
+        <feature version="2010.01">servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.snmp4j/1.8.1_3</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-snmp/2010.01</bundle>
+    </feature>
+    <feature name="servicemix-vfs" version="2010.01">
+        <feature version="2010.01">servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-vfs/1.0_3</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-vfs/2010.01</bundle>
+    </feature>
+    <feature name="servicemix-smpp" version="2010.01">
+        <feature version="2010.01">servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jsmpp/2.0_2</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-smpp/2010.01</bundle>
+    </feature>
+    <feature name="servicemix-exec" version="2010.01">
+         <feature version="2010.01">servicemix-shared</feature>
+         <bundle>mvn:org.apache.servicemix/servicemix-exec/2010.01</bundle>
+    </feature>
+    
+    <!-- Default broker configuration -->
+    <feature name="activemq-broker" version="4.2.0">
+        <feature>spring-dm</feature>
+        <feature version="5.3.0">activemq</feature>
+        <bundle>spring:file:etc/activemq-broker.xml</bundle>
+    </feature>
+</features>

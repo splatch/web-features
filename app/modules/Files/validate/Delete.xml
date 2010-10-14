@@ -7,6 +7,17 @@
 	<ae:configuration>
 		
 		<validators>
+	      <validator class="Files_FilesValidator" name="id">
+	        <arguments>
+	          <argument>id</argument>
+	        </arguments>
+	        <errors>
+	          <error>The parameter id must contain a valid file id</error>
+	        </errors>
+	        <ae:parameters>
+	          <ae:parameter name="export">id</ae:parameter>
+	        </ae:parameters> 
+	      </validator>
 		</validators>
 		
 	</ae:configuration>

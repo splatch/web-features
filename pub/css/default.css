@@ -101,8 +101,14 @@ table tr:hover td {
 }
 
 table td.operations {
-	width: 100px;
+	width: 120px;
 	text-align: center;
+}
+
+table td.parse {
+	width: 120px;
+	text-align: center;
+	font-weight: bold;
 }
 
 h2 {

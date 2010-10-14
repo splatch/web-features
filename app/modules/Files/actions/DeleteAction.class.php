@@ -18,6 +18,16 @@ class Files_DeleteAction extends WebfeaturesFilesBaseAction
 	{
 		return 'Success';
 	}
+	
+  	public function executeRead(AgaviRequestDataHolder $rd)
+  	{
+  		$fileId = $rd->getParameter('id');
+  		$manager = $this->getContext()->getModel('FilesManager', 'Files');
+  		$manager->deleteFile($fileId);
+  		
+  		return 'Success';
+  	}
+	
 }
 
 ?>

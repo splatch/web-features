@@ -23,20 +23,23 @@ class Files_FilesManagerModel extends WebfeaturesFilesBaseModel
   	
   	public function retrieveById($id)
   	{
-		$sql = 'SELECT * FROM files WHERE id = ?';
-  
-    	$stmt = $this->getContext()->getDatabaseManager()->getDatabase()->getConnection()->prepare($sql);
-    	$stmt->bindValue(1, $id, PDO::PARAM_INT);
-    	$stmt->execute();
-  
-	    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-	    
-	    if (false != $result)
-	    {
-	      return $this->getContext()->getModel('Files', 'Files', array($result));
-	    }
-	    
-	    return null;
+//		$sql = 'SELECT * FROM files WHERE id = ?';
+//  
+//    	$stmt = $this->getContext()->getDatabaseManager()->getDatabase()->getConnection()->prepare($sql);
+//    	$stmt->bindValue(1, $id, PDO::PARAM_INT);
+//    	$stmt->execute();
+//  
+//	    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+//	    
+//	    if (false != $result)
+//	    {
+//	      return $this->getContext()->getModel('Files', 'Files', array($result));
+//	    }
+//	    
+//	    return null;
+
+  		$query = $this->em->createQuery('SELECT f FROM WebFeatures\Model\File f WHERE id = '.$id);
+  		return $query->getResult();
   	}
   	
 	public function storeNew(Files_FilesModel $file)

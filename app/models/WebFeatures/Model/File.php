@@ -7,10 +7,6 @@ namespace WebFeatures\Model;
  */
 class File
 {
-    /**
-     * @var string $name
-     */
-    private $name;
 
     /**
      * @var string $filename
@@ -21,26 +17,11 @@ class File
      * @var integer $id
      */
     private $id;
-
+    
     /**
-     * Set name
-     *
-     * @param string $name
+     * @var boolean $parsed
      */
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string $name
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
+    private $parsed;
 
     /**
      * Set filename
@@ -70,5 +51,25 @@ class File
     public function getId()
     {
         return $this->id;
+    }
+    
+    /**
+     * 
+     * Set parsed flag
+     * 
+     * @param integer $parsed
+     */
+    public function setParsed($parsed)
+    {
+    	$this->parsed = ($parsed == 1) ? true : false;
+    }
+    
+    /**
+     * Get parsed flag
+     * 
+     * @return boolean $parsed
+     */
+    public function isParsed(){
+    	return $this->parsed;
     }
 }

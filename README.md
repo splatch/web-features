@@ -21,3 +21,9 @@ Both Agavi and Doctrine can be installed as PEAR packages (which we recommend).
 
 ### Using doctrine
 After sucessfull PEAR installation you can use `doctrine` script from command line.
+
+Following commands have to be executed to generate model:
+* doctrine orm:generate-entities app\models
+* doctrine orm:schema-tool:create
+
+If you have database use orm:schema-tool:update instead of schema-tool:create.

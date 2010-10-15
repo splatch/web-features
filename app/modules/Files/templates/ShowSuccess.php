@@ -1,4 +1,4 @@
-<h2><?php echo $t['file']['filename']; ?></h2>
+<h2><?php echo $t['file']->getFilename(); ?></h2>
 <table>
 	<th>Źródło pliku</th>
 	<tr>

@@ -72,4 +72,19 @@ class File
     public function isParsed(){
     	return $this->parsed;
     }
+    /**
+     * Get parsed
+     *
+     * @return integer $parsed
+     */
+    public function getParsed()
+    {
+        return $this->parsed;
+    }
+
+
+
+
+
+
 }

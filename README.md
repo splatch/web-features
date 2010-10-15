@@ -28,3 +28,5 @@ Following commands have to be executed to generate model:
 * doctrine orm:schema-tool:create
 
 If you have database use orm:schema-tool:update instead of schema-tool:create.
+
+After generate new models you must insert references to them in autoload.xml file

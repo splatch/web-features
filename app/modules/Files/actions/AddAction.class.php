@@ -1,5 +1,7 @@
 <?php
 
+use WebFeatures\Model\File;
+
 class Files_AddAction extends WebfeaturesFilesBaseAction
 {
 	/**
@@ -32,43 +34,16 @@ class Files_AddAction extends WebfeaturesFilesBaseAction
 		$filename = $parts[count($parts)-1];
 		file_put_contents('data/'.$filename, $source);
 		
-		$data = array(
-			'filename' => $filename
-		);
-		
-		$file = $ctx->getModel('Files', 'Files', array($data));
-		$filesManager = $ctx->getModel('FilesManager', 'Files');
-		
-		$fileId = $filesManager->storeNew($file);
-		
+		$file = new File();
+		$file->setFilename($filename);
+		$file->setParsed(0);
+
+		$em = $this->getContext()->getDatabaseManager()->getDatabase()->getEntityManager();
+		$em->persist($file);
+		$em->flush();
+
 		return 'Success';
 	}
-	
-  public function execusadsdadteWaasdarite(AgaviRequestDataHolder $rd)
-  {
-    $ctx = $this->getContext();
-    
-    $data = array(
-      'title' => $rd->getParameter('title'),
-      'content' => $rd->getParameter('content'),
-      'category_id' => $rd->getParameter('category'),
-      'author_id' => 1, // let's bind that to a fixed value for the moment
-    );
-    
-    $post = $ctx->getModel('Post', 'Posts', array($data));
-    $postManager = $ctx->getModel('PostManager', 'Posts');
-    
-    $postId = $postManager->storeNew($post);
-    
-    // we need a post with at least and id and a title to create an url
-    // so we reload the post from the database
-    
-    $post = $postManager->retrieveById($postId);
-    
-    $this->setAttribute('post', $post);
-    
-    return 'Success';
-  }
 }
 
 ?>

@@ -22,8 +22,15 @@ class Files_DeleteAction extends WebfeaturesFilesBaseAction
   	public function executeRead(AgaviRequestDataHolder $rd)
   	{
   		$fileId = $rd->getParameter('id');
-  		$manager = $this->getContext()->getModel('FilesManager', 'Files');
-  		$manager->deleteFile($fileId);
+
+  		$manager = $this->getModel('\WebFeatures\DAO\FileDAO');
+  		$file = $manager->findById($fileId);
+  		
+  		@unlink('data/'.$file[0]->getFilename());
+  		
+  		$em = $this->getContext()->getDatabaseManager()->getDatabase()->getEntityManager();
+  		$em->remove($file[0]);
+  		$em->flush();
   		
   		return 'Success';
   	}

@@ -23,10 +23,13 @@ class Files_ShowAction extends WebfeaturesFilesBaseAction
   	{
   		$fileId = $rd->getParameter('id');
 		$this->setAttribute('id', $fileId);
-  		$manager = $this->getContext()->getModel('FilesManager', 'Files');
-  		$file = $manager->retrieveById($fileId)->toArray();
+  		
+  		
+  		$manager = $this->getModel('\WebFeatures\DAO\FileDAO');
+  		$file = $manager->findById($fileId);
   		$this->setAttribute('file', $file);
-  		$source = file_get_contents('data/'.$file['filename']);
+
+  		$source = file_get_contents('data/'.$file[0]->getFilename());
   		$this->setAttribute('source', $source);
   		return 'Success';
   	}

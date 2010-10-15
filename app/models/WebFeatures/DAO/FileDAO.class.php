@@ -12,39 +12,23 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License. 
  */
-use Doctrine\ORM\EntityManager;
+namespace WebFeatures\DAO;
+
 use Doctrine\ORM\EntityRepository;
 
+use Doctrine\ORM\Internal\Hydration\HydrationException;
+
 /**
- * Base model from whole project.
+ * FileDAO.
  * 
+ * @author mwolinski@code-house.org
  * @author luke@code-house.org
  */
-class WebfeaturesBaseModel extends EntityRepository implements 
-	AgaviISingletonModel { // make sure we have only one instance of every dao
+class FileDAOModel extends \WebfeaturesBaseModel
+{
 
-	/**
-	 * Default constructor.
-	 * 
-	 * @param string $class Name of the domain class.
-	 */
-	public function __construct($class) {
-		$this->_entityName = $class;
-	}
-
-	/**
-	 * Initialize DAO.
-	 *
-	 * @param AgaviContext $context Framework configured context.
-	 */
-	public function initialize(AgaviContext $context) {
-		$this->_em = $context->getDatabaseManager()->getDatabase()->getEntityManager();
-		$this->_class = $this->_em->getClassMetadata($this->_entityName);
-	}
-
-	// no context
-	public function getContext() {
-		return null;
+	public function __construct() {
+		parent::__construct('WebFeatures\Model\File');
 	}
 }
 

@@ -1,6 +1,6 @@
 <?php
 
-class Files_IndexAction extends WebfeaturesFilesBaseAction
+class Default_LogoutAction extends WebfeaturesDefaultBaseAction
 {
 	/**
 	 * Returns the default view if the action does not serve the request
@@ -19,18 +19,12 @@ class Files_IndexAction extends WebfeaturesFilesBaseAction
 		return 'Success';
 	}
 	
-  	public function executeRead(AgaviRequestDataHolder $rd)
-  	{
-  		$manager = $this->getModel('\WebFeatures\DAO\FileDAO');
-  		$this->setAttribute('files', $manager->findAll());
-  		
+    public function executeRead(AgaviRequestDataHolder $rd)
+    {
     	$user = $this->getContext()->getUser();
-    	
-    	//$this->setAttribute('authorized', ($user->isAuthorized()) ? true : false); 
-    	
-  		
-  		return 'Success';
-  	}
+    	$user->logout();
+    	return 'Success';
+    }
 }
 
 ?>

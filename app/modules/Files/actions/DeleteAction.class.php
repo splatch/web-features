@@ -34,6 +34,11 @@ class Files_DeleteAction extends WebfeaturesFilesBaseAction
   		
   		return 'Success';
   	}
+  	
+	public function isSecure()
+	{
+	  return true;
+	}
 	
 }
 

@@ -21,6 +21,10 @@
       
       <route name="Features" pattern="^/features$" module="Features" action="List" />
       <route name="FeaturesShow" pattern="^/features/show/(id:\d+)$" module="Features" action="Show" />
+      
+      <route name="Login" pattern="^/login$" module="Default" action="Login" />
+      <route name="Logout" pattern="^/logout$" module="Default" action="Logout" />
+      
     </routes>
   </ae:configuration>
 </ae:configurations>

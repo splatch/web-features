@@ -8,6 +8,9 @@
     <title><?php if(isset($t['_title'])) echo htmlspecialchars($t['_title']) 
      . ' - '; echo AgaviConfig::get('core.app_name'); ?></title>
   </head>
+<?php 
+$user = $this->getContext()->getUser();
+?>
   <body>
     <!-- begin header -->
     <div id="header">
@@ -15,10 +18,13 @@
       <div id="menu">
         <ul>
           <li><a href="<?php echo $ro->gen('files'); ?>">Files List</a></li>
-          </li>
+          <?php if ($user->isAuthenticated()): ?>
+          <li><a href="<?php echo $ro->gen('logout'); ?>">Logout</a></li>
+          <?php else: ?>
+          <li><a href="<?php echo $ro->gen('login'); ?>">Admin login</a></li>
+          <?php endif;?>
         </ul>
       </div>
-
     </div>
     <!-- end header -->
     

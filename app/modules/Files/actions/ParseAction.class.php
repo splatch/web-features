@@ -92,6 +92,11 @@ class Files_ParseAction extends WebfeaturesFilesBaseAction
   		
   		return 'Success';
   	}
+  	
+	public function isSecure()
+	{
+	  return true;
+	}
 }
 
 ?>

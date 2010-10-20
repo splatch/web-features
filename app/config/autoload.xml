@@ -4,6 +4,8 @@
 		<autoload name="WebfeaturesBaseAction">%core.lib_dir%/action/WebfeaturesBaseAction.class.php</autoload>
 		<autoload name="WebfeaturesBaseModel">%core.lib_dir%/model/WebfeaturesBaseModel.class.php</autoload>
 		<autoload name="WebfeaturesBaseView">%core.lib_dir%/view/WebfeaturesBaseView.class.php</autoload>
+		<autoload name="User">%core.lib_dir%/user/User.class.php</autoload>
+		
 
 		<!-- Custom database -->
 		<autoload name="AgaviDoctrine2Database">%core.lib_dir%/AgaviDoctrine2Database.class.php</autoload>
@@ -20,5 +22,8 @@
 		
 		<autoload name="WebFeatures\Model\Bundle">%core.model_dir%/WebFeatures/Model/Bundle.php</autoload>
 		<autoload name="WebFeatures\DAO\BundleDAOModel">%core.model_dir%/WebFeatures/DAO/BundleDAO.class.php</autoload>
+		
+		<autoload name="WebFeatures\Model\User">%core.model_dir%/WebFeatures/Model/User.php</autoload>
+		<autoload name="WebFeatures\DAO\UserDAOModel">%core.model_dir%/WebFeatures/DAO/UserDAO.class.php</autoload>
 	</ae:configuration>
 </ae:configurations>

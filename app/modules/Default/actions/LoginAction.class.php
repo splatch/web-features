@@ -15,9 +15,20 @@ class Default_LoginAction extends WebfeaturesDefaultBaseAction
 	 *                   </ul>
 	 */
 	public function getDefaultViewName()
-	{
-		return 'Success';
-	}
+    {
+    	return 'Input';
+    }
+  
+    public function executeWrite(AgaviRequestDataHolder $rd)
+    {
+    	try {
+    		$user = $this->getContext()->getUser();
+    		$user->login($rd->getParameter('login'), $rd->getParameter('password'));
+    		return 'Success';
+    	} catch (AgaviSecurityException $e) {
+    		return 'Error';
+    	}
+    }
 }
 
 ?>

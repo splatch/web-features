@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations xmlns="http://agavi.org/agavi/config/parts/autoload/1.0" xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
+	<ae:configuration>
+		
+		<autoload name="WebfeaturesFeaturesBaseAction">%core.module_dir%/Features/lib/action/WebfeaturesFeaturesBaseAction.class.php</autoload>
+		<autoload name="WebfeaturesFeaturesBaseModel">%core.module_dir%/Features/lib/model/WebfeaturesFeaturesBaseModel.class.php</autoload>
+		<autoload name="WebfeaturesFeaturesBaseView">%core.module_dir%/Features/lib/view/WebfeaturesFeaturesBaseView.class.php</autoload>
+		
+	</ae:configuration>
+</ae:configurations>

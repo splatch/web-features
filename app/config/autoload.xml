@@ -17,5 +17,8 @@
 		
 		<autoload name="WebFeatures\Model\Feature">%core.model_dir%/WebFeatures/Model/Feature.php</autoload>
 		<autoload name="WebFeatures\DAO\FeatureDAOModel">%core.model_dir%/WebFeatures/DAO/FeatureDAO.class.php</autoload>
+		
+		<autoload name="WebFeatures\Model\Bundle">%core.model_dir%/WebFeatures/Model/Bundle.php</autoload>
+		<autoload name="WebFeatures\DAO\BundleDAOModel">%core.model_dir%/WebFeatures/DAO/BundleDAO.class.php</autoload>
 	</ae:configuration>
 </ae:configurations>

@@ -1,12 +1,12 @@
-<h2>Lista plików</h2>
+<h2>Files list</h2>
 <table>
-	<th>Lp</th>
-	<th>Nazwa pliku</th>
-	<th>Przeparsowany</th>
-	<th>Operacje</th>
+	<th>No.</th>
+	<th>File name</th>
+	<th>Parsed</th>
+	<th>Operations</th>
 	<tr>
 		<td class="lp"></td>
-		<td><a href="/files/add" style="font-weight:bold;">Dodaj nowy plik</a></td>
+		<td><a href="/files/add" style="font-weight:bold;">Add new file</a></td>
 		<td></td>
 		<td></td>
 	</tr>
@@ -19,12 +19,12 @@
 		<tr>
 			<td class="lp"><?php echo $i;?></td>
 			<td><a href="/files/show/<?php echo $file->getId(); ?>"><?php echo htmlspecialchars($file->getFilename()); ?></a></td>
-			<td class="parse"><?php echo ($file->isParsed()) ? "Tak" : "Nie";?></td>
+			<td class="parse"><?php echo ($file->isParsed()) ? "Yes" : "No";?></td>
 			<td class="operations">
 			<?php if (!$file->isParsed()): ?>
-				<a href="/files/parse/<?php echo $file->getId(); ?>">Parsuj</a>
+				<a href="/files/parse/<?php echo $file->getId(); ?>">Parse</a>
 			<?php endif; ?>
-				<a href="/files/delete/<?php echo $file->getId(); ?>">Usuń</a>
+				<a href="/files/delete/<?php echo $file->getId(); ?>">Delete</a>
 			</td>
 		</tr>
 	<?php 

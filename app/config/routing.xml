@@ -18,6 +18,9 @@
       <route name="FilesShow" pattern="^/files/show/(id:\d+)$" module="Files" action="Show" />
       <route name="FilesAdd" pattern="^/files/add$" module="Files" action="Add" />
       <route name="FilesParse" pattern="^/files/parse/(id:\d+)$" module="Files" action="Parse" />
+      
+      <route name="Features" pattern="^/features$" module="Features" action="List" />
+      <route name="FeaturesShow" pattern="^/features/show/(id:\d+)$" module="Features" action="Show" />
     </routes>
   </ae:configuration>
 </ae:configurations>

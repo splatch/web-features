@@ -4,9 +4,9 @@ class Default_IndexSuccessView extends WebfeaturesDefaultBaseView
 {
 	public function executeHtml(AgaviRequestDataHolder $rd)
 	{
-		$this->setupHtml($rd);
-
-		$this->setAttribute('_title', 'Index');
+	    $url = $this->getContext()->getRouting()->gen('Files');
+	    
+	    $this->getResponse()->setRedirect($url);
 	}
 }
 

@@ -1,5 +1,5 @@
 <?php
-
+use WebFeatures\Model\Bundle;
 use WebFeatures\Model\Feature;
 use WebFeatures\Model\Repository;
 
@@ -57,6 +57,7 @@ class Files_ParseAction extends WebfeaturesFilesBaseAction
   				$em->persist($feature);
   				$em->flush();
   				$referenceId = $feature->getId();
+
   				foreach ($obj as $featureElem)
   				{
   					if ($featureElem->getName()=='feature')
@@ -72,14 +73,23 @@ class Files_ParseAction extends WebfeaturesFilesBaseAction
   						
   					} elseif ($featureElem->getName()=='bundle')
   					{
-  						//TODO: create bundle row
+  						$bundle = new Bundle();
+  						$bundle->setBundle((string)$featureElem);
+  						$bundle->setFeatureId($referenceId);
+  						
+  						$em->persist($bundle);
+  						$em->flush();
+
   					}
   				}
   			}
   		}
+  		$file = $file[0];
+  		$file->setParsed(1);
   		
+  		$em->persist($file);
+  		$em->flush();
   		
-  		//TODO: set flag parsed to file
   		return 'Success';
   	}
 }

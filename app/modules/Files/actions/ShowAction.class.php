@@ -24,11 +24,23 @@ class Files_ShowAction extends WebfeaturesFilesBaseAction
   		$fileId = $rd->getParameter('id');
 		$this->setAttribute('id', $fileId);
   		
-  		$manager = $this->getModel('\WebFeatures\DAO\FileDAO');
-  		$file = $manager->findById($fileId);
-  		$this->setAttribute('file', $file[0]);
+  		$fileManager = $this->getModel('\WebFeatures\DAO\FileDAO');
+  		$file = $fileManager->findById($fileId);
+  		$file = $file[0];
+  		$this->setAttribute('file', $file);
+  		
+  		if ($file->isParsed())
+  		{
+  			$repositoryManager = $this->getModel('\WebFeatures\DAO\RepositoryDAO');
+  			$repositories = $repositoryManager->findBy(array('file_id' => $fileId));
+  			$this->setAttribute('repositories', $repositories);
+  			
+  			$featureManager = $this->getModel('\WebFeatures\DAO\FeatureDAO');
+  			$features = $featureManager->findBy(array('file_id' => $fileId, 'reference_id' => 0));
+  			$this->setAttribute('features', $features);
+  		}
 
-  		$source = file_get_contents('data/'.$file[0]->getFilename());
+  		$source = file_get_contents('data/'.$file->getFilename());
   		$this->setAttribute('source', $source);
   		return 'Success';
   	}
